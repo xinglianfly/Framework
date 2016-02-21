@@ -1,5 +1,6 @@
 package com.example.administrator.frameworkdemo;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -82,7 +83,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(MenuItem item) {
         item.setChecked(true);
         mDrawerlayout.closeDrawers();
-        Toast.makeText(this,item.getTitle(),Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(this,CoordinaryActivity.class));
         return true;
     }
 
