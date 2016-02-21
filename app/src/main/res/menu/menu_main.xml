@@ -1,6 +1,32 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
-    <item android:id="@+id/action_settings" android:title="@string/action_settings"
-        android:orderInCategory="100" app:showAsAction="never" />
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/navigarion_item1"
+            android:checked="true"
+            android:icon="@mipmap/ic_launcher"
+            android:title="navigaion1"></item>
+        <item
+            android:id="@+id/navigarion_item2"
+            android:checked="true"
+            android:icon="@mipmap/ic_launcher"
+            android:title="navigaion2"></item>
+        <item
+            android:id="@+id/navigarion_item3"
+            android:checked="true"
+            android:icon="@mipmap/ic_launcher"
+            android:title="navigaion3"></item>
+    </group>
+    <item android:title="submenu">
+        <menu>
+            <item
+                android:icon="@mipmap/ic_launcher"
+                android:title="submenu1"></item>
+            <item
+                android:icon="@mipmap/ic_launcher"
+                android:title="submenu2"></item>
+        </menu>
+    </item>
 </menu>
