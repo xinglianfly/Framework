@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.fab:
-                Snackbar.make(findViewById(R.id.drawerlayout),"i am snackbar",Snackbar.LENGTH_LONG).setAction("Action", new View.OnClickListener() {
+                Snackbar.make(findViewById(R.id.coordinatorlayout),"i am snackbar",Snackbar.LENGTH_LONG).setAction("Action", new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         Toast.makeText(MainActivity.this, "Snackbar Action", Toast.LENGTH_LONG).show();
