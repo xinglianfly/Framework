@@ -13,11 +13,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,View.OnClickListener{
 
     private DrawerLayout mDrawerlayout;
     NavigationView navigationView;
     Toolbar toolbar;
+    FloatingActionButton floatingActionButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +28,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView = (NavigationView) findViewById(R.id.navigationview);
         toolbar  = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setNavigationIcon(R.mipmap.ic_launcher);
+        floatingActionButton = (FloatingActionButton) findViewById(R.id.fab);
+        floatingActionButton.setOnClickListener(this);
         setSupportActionBar(toolbar);
         navigationView.setNavigationItemSelectedListener(this);
 
@@ -65,5 +68,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mDrawerlayout.closeDrawers();
         Toast.makeText(this,item.getTitle(),Toast.LENGTH_SHORT).show();
         return true;
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.fab:
+                Snackbar.make(findViewById(R.id.drawerlayout),"i am snackbar",Snackbar.LENGTH_LONG).setAction("Action", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(MainActivity.this, "Snackbar Action", Toast.LENGTH_LONG).show();
+
+                    }
+                }).show();
+                break;
+        }
     }
 }
